@@ -47,7 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
+    document.body.addEventListener('touchmove' , (e)=> {
+                if (e.touches > 0 || e.touches > 0) {
+                    alert('Down');
+                } else {
+                    alert('Up');
+                }
+    })
     function slideTo(to) {
 
         let prevIndicator = document.querySelector('.history .indicators .indicator.active');
