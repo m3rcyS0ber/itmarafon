@@ -48,11 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     document.body.addEventListener('touchmove' , (e)=> {
-                if (e.touches > 0 || e.touches > 0) {
-                    alert('Down');
-                } else {
-                    alert('Up');
-                }
+        alert(e.touches)
     })
     function slideTo(to) {
 
