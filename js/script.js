@@ -47,20 +47,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    let touchstartY = 0
-    let touchendY = 0
+    let touchstartX = 0
+    let touchendX = 0
 
     function checkDirection() {
-        if (touchendY < touchstartY) alert('swiped top!')
-        if (touchendY > touchstartY) alert('swiped down!')
+        if (touchendX < touchstartX) alert('swiped left!')
+        if (touchendX > touchstartX) alert('swiped right!')
     }
 
-    document.body.addEventListener('touchstart', e => {
-        touchstartY = e.changedTouches[0].screenY
+    document.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX
     })
 
-    document.body.addEventListener('touchend', e => {
-        touchendY = e.changedTouches[0].screenY
+    document.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX
         checkDirection()
     })
     function slideTo(to) {
