@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    document.body.addEventListener('touchmove' , (e)=> {
-        alert(JSON.stringify(e.targetTouches))
+    document.addEventListener('touchmove' , (e)=> {
+        alert('debug: '+JSON.stringify(e.targetTouches))
     })
     function slideTo(to) {
 
