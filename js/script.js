@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (touchendY > touchstartY) alert('swiped down!')
     }
 
-    document.addEventListener('touchstart', e => {
+    document.body.addEventListener('touchstart', e => {
         touchstartY = e.changedTouches[0].screenY
     })
 
-    document.addEventListener('touchend', e => {
+    document.body.addEventListener('touchend', e => {
         touchendY = e.changedTouches[0].screenY
         checkDirection()
     })
