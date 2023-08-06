@@ -14,12 +14,14 @@ html {
 }
 body {
     width: 100vw;
+    height: 100%;
 }
 .wrappper {
     display: flex;
     flex-direction: column;
     width:100%;
     position: relative;
+    overflow: hidden;
 }
 .content {
     display: flex;
@@ -37,7 +39,9 @@ body {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed;
+
+    overflow: hidden;
     height: 100vh;
     width: 100vw;
     z-index: 1;

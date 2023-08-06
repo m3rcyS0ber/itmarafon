@@ -47,9 +47,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    $("body").on("swipe", function(event) {
-        alert("It's a swipe!");
-    });
+    document.addEventListener('touchstart', swipeStart, false);
+    document.addEventListener('touchmove', swipeMove, false);
+    let xAxis = null;
+    let yAxis = null;
+
+    function getTouches(evt) { return evt.touches; }
+
+    function swipeStart(evt) {
+        xAxis = getTouches(evt)[0].clientX;
+        yAxis = getTouches(evt)[0].clientY;
+    };
+
+    function swipeMove(evt) {
+        if (!xAxis || !yAxis) return;
+
+        let swipex = xAxis - evt.touches[0].clientX;
+        let swipey = yAxis - evt.touches[0].clientY;
+
+        if (Math.abs(swipex) < Math.abs(swipey)) {
+            if (swipey > 0) {
+                if((window.innerHeight + window.scrollY >= document.body.scrollHeight-10)) {
+                    let prevIndicator = document.querySelector('.history .indicators .indicator.active').getAttribute('slideto');
+                    if(prevIndicator >= historyPages.length) return false;
+                    slideTo(String(Number(prevIndicator)+1));
+                }
+            } else {
+                if(( window.scrollY <= 50)) {
+                    let prevIndicator = document.querySelector('.history .indicators .indicator.active').getAttribute('slideto');
+                    if(prevIndicator == 1) return false;
+                    slideTo(String(Number(prevIndicator)-1));
+                }
+            }
+        }
+
+        xAxis = yAxis = null;
+    }
+
     function slideTo(to) {
 
         let prevIndicator = document.querySelector('.history .indicators .indicator.active');

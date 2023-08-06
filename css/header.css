@@ -136,6 +136,7 @@
     background-color: var(--darker-blue);
     width: 100vw;
     height: 100vh;
+    overflow-y: scroll;
 }
 .overlay__mobile__menu {
     z-index: 1;
