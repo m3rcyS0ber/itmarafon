@@ -10,8 +10,10 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100%;
+    width: 100vw;
 }
 body {
+    width: 100vw;
 }
 .wrappper {
     display: flex;
