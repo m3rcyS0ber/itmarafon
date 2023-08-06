@@ -1,0 +1,11 @@
+:root {
+    --blue: hsla(219, 74%, 36%, 1);
+    --lightest-blue: hsl(223, 33%, 45%);
+    --light-blue: hsla(219, 100%, 69%, 1);
+    --darker-blue: hsla(228, 55%, 16%, 1);
+    --dark-blue: hsla(223, 40%, 32%, 1);
+    --solid-blue: hsla(227, 100%, 60%, 1);
+    --indigo: hsla(209, 85%, 43%, 1);
+    --dark-indigo: hsla(223, 40%, 32%, 1);
+    --gray-blue: hsla(223, 32%, 53%, 1);
+}
