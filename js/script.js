@@ -47,8 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    document.addEventListener('touchmove' , (e)=> {
-        alert('debug: '+JSON.stringify(e.targetTouches))
+    let touchstartX = 0
+    let touchendX = 0
+
+    function checkDirection() {
+        if (touchendY < touchstartY) alert('swiped top!')
+        if (touchendY > touchstartY) alert('swiped down!')
+    }
+
+    document.addEventListener('touchstart', e => {
+        touchstartY = e.changedTouches[0].screenY
+    })
+
+    document.addEventListener('touchend', e => {
+        touchendY = e.changedTouches[0].screenY
+        checkDirection()
     })
     function slideTo(to) {
 
