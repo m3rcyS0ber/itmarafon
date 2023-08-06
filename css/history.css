@@ -310,3 +310,63 @@
         top: calc(var(--spacing) / 1.25 + var(--radius) + 75px);
     }
 }
+.anim-top-fade-out {
+    animation-name: TopFadeOut;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+.anim-top-fade-in {
+    animation-name: TopFadeIn;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+.anim-down-fade-out {
+    animation-name: DownFadeOut;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+.anim-down-fade-in {
+    animation-name: DownFadeIn;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+@keyframes TopFadeOut {
+    from {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(40%);
+    }
+}
+@keyframes TopFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-40%);
+    }
+    to {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
+@keyframes DownFadeOut {
+    from {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-40%);
+    }
+}
+@keyframes DownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40%);
+    }
+    to {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}

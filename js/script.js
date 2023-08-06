@@ -87,17 +87,39 @@ document.addEventListener('DOMContentLoaded', () => {
     function slideTo(to) {
 
         let prevIndicator = document.querySelector('.history .indicators .indicator.active');
+        let prevIndicatorNum = prevIndicator.getAttribute('slideto');
         let nextIndicator = document.querySelector(`.history .indicators .indicator[slideto='${to}']`)
 
         if(prevIndicator === nextIndicator) return false;
-
         if(prevIndicator) prevIndicator.classList.toggle('active');
 
         let prevSlide = document.querySelector('.history__tree .history__page.active');
-        prevSlide.classList.toggle('active')
 
-        nextIndicator.classList.toggle('active');
         let nextSlide = document.querySelector(`.history__tree .history__page[page='${to}']`);
-        nextSlide.classList.toggle('active');
+
+        if(Number(to) > Number(prevIndicatorNum)) {
+            prevSlide.classList.toggle('anim-down-fade-out')
+            prevSlide.classList.toggle('active')
+
+            nextIndicator.classList.toggle('active');
+            nextSlide.classList.toggle('anim-down-fade-in')
+            nextSlide.classList.toggle('active');
+            setTimeout(()=> {
+                prevSlide.classList.toggle('anim-down-fade-out')
+                nextSlide.classList.toggle('anim-down-fade-in')
+            },1000)
+        } else {
+            prevSlide.classList.toggle('anim-top-fade-out')
+            prevSlide.classList.toggle('active')
+
+            nextIndicator.classList.toggle('active');
+            nextSlide.classList.toggle('anim-top-fade-in')
+            nextSlide.classList.toggle('active');
+            setTimeout(()=> {
+                prevSlide.classList.toggle('anim-top-fade-out')
+                nextSlide.classList.toggle('anim-top-fade-in')
+            },1000)
+        }
+
     }
 })
