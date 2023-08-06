@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const delta = Math.sign(evt.deltaY);
         if(isScrollAvailable) {
             isScrollAvailable = false;
+            setTimeout(()=> {
+                isScrollAvailable = true;
+            },1000)
             if(delta === -1) {
                 let prevIndicator = document.querySelector('.history .indicators .indicator.active').getAttribute('slideto');
                 if(prevIndicator == 1) return false;
@@ -42,9 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(prevIndicator >= historyPages.length) return false;
                 slideTo(String(Number(prevIndicator)+1));
             }
-            setTimeout(()=> {
-                isScrollAvailable = true;
-            },1000)
         }
     });
 
