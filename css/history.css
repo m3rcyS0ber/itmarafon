@@ -59,10 +59,11 @@
 }
 .history__year__title {
     font-size: 20px;
+    font-weight: 600;
 }
 .history__year__description {
     font-size: 16px;
-    width: 65%;
+    width: 568px;
     max-width: 568px;
     word-wrap: break-word;
 }
@@ -102,7 +103,8 @@
 .page__tree{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
+    margin-top: 90px;
 }
 
 .page__tree .branch__left li{
@@ -119,6 +121,7 @@
 .page__tree ul{
     margin-left  : calc(var(--radius) - var(--spacing));
     padding-left : calc(var(--spacing) / 1.25 + var(--radius) + 60px);
+    padding-bottom: 100px;
 }
 
 .page__tree ul li{
@@ -131,7 +134,17 @@
 .page__tree ul li:last-child{
     border-color : transparent;
 }
-
+.page__tree .branch__left ul::before, .page__tree .branch__right ul::before{
+    content      : '';
+    display      : block;
+    position     : absolute;
+    top          : calc(var(--spacing) + 190px / 2);
+    left         : calc(50% - 41px);
+    width        : calc(var(--spacing) + 20px + 60px);
+    height       : calc(100% - 130px);
+    border       : solid var(--dark-indigo);
+    border-width : 0 0 0 2px;
+}
 .page__tree .branch__left ul li::before{
     content      : '';
     display      : block;
@@ -227,6 +240,7 @@
     border-radius: 100%;
     background-color: #fff;
     box-shadow: 0 0 25px 5px var(--solid-blue);
+    z-index: 1;
 }
 .next__branch, .prev__branch {
     color: var(--gray-blue);
@@ -235,6 +249,11 @@
     background-color: var(--light-blue);
     width: calc(1.5 * var(--radius));
     height: calc(1.5 * var(--radius));
+}
+@media(max-width: 1400px) {
+    .history__year__description {
+        width: 65%;
+    }
 }
 @media(max-width: 960px) {
     .history .indicators {
@@ -254,13 +273,19 @@
     }
     .page__tree ul li {
         padding-left: calc(2 * var(--spacing) - var(--radius) + 50px) !important;
-        left: 0;
+        left: 20px;
     }
     .page__text .title {
         font-size: 54px;
     }
     .page__text .subtitle {
         font-size: 24px;
+    }
+    .page__tree .branch__left ul::before, .page__tree .branch__right ul::before{
+        top          : calc(var(--spacing) + 190px / 2);
+        left         : 20px;
+        width        : calc(var(--spacing) + 20px + 60px);
+        height       : calc(100% - 130px);
     }
     .page__tree ul li::before{
         top          : calc(var(--spacing) + 30px / 2);
@@ -289,7 +314,7 @@
         align-items: start;
     }
     .main__branch .branch__dot {
-        margin-left: -8px;
+        margin-left: 11px;
     }
     .page__tree ul li::before{
         content      : '';

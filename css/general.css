@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Manrope';
+    font-family: 'Manrope', serif;
 }
 html {
     background: radial-gradient(50% 50% at 50% 50%, rgba(18, 27, 62, 0) 0%, rgba(8, 12, 21, 0.5) 100%),
@@ -27,7 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    padding: 0 50px;
+    padding: 0 60px;
 
     transition: all .3s;
     -moz-transition: all .3s;
@@ -46,6 +46,7 @@ body {
     width: 100vw;
     z-index: 1;
 }
+
 @media (max-width: 800px) {
     .content {
         padding: 0 20px;
