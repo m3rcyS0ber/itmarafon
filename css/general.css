@@ -58,6 +58,17 @@ body {
 
     }
 }
+@media (max-width: 450px) {
+    .content {
+        padding: 0 10px;
+
+        transition: all .3s;
+        -moz-transition: all .3s;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+
+    }
+}
 @font-face {
     src: url("../fonts/Manrope-VariableFont_wght.ttf");
     font-family: 'Manrope';

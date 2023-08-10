@@ -56,6 +56,7 @@
 }
 .history__year {
     font-size: 40px;
+    filter: drop-shadow(0 0 20px var(--solid-blue)) ;
 }
 .history__year__title {
     font-size: 20px;
@@ -66,6 +67,7 @@
     width: 568px;
     max-width: 568px;
     word-wrap: break-word;
+    filter: drop-shadow(0 0 60px var(--solid-blue)) ;
 }
 .branch__right .history__year__description {
     transform: translateX(-127%);
@@ -155,7 +157,7 @@
     height       : calc(var(--spacing) + 40px);
     border       : solid var(--dark-indigo);
     border-width : 0 0 2px 2px;
-    border-bottom-left-radius: 15px;
+    border-bottom-left-radius: 20px;
 }
 .page__tree .branch__right ul li::before{
     content      : '';
@@ -167,7 +169,7 @@
     height       : calc(var(--spacing) + 40px);
     border       : solid var(--dark-indigo);
     border-width : 0 0 2px 2px;
-    border-bottom-left-radius: 15px;
+    border-bottom-left-radius: 20px;
     transform: rotate3d(0, 1, 0, 180deg);
 }
 .page__tree summary{
@@ -240,7 +242,6 @@
     border-radius: 100%;
     background-color: #fff;
     box-shadow: 0 0 25px 5px var(--solid-blue);
-    z-index: 1;
 }
 .next__branch, .prev__branch {
     color: var(--gray-blue);
@@ -330,9 +331,38 @@
         transform: none !important;
     }
 }
-@media (max-width: 529px) {
-    .main__branch summary::before {
-        top: calc(var(--spacing) / 1.25 + var(--radius) + 75px);
+@media (max-width: 629px) {
+    .page__tree .branch__left ul::before, .page__tree .branch__right ul::before {
+        top: calc(var(--spacing) + 160px + -7.5vw / 2);
+        height: calc(100% - 220px);
+    }
+}
+@media (max-width: 450px) {
+    .history__page {
+        padding-left: 0;
+    }
+    .page__tree {
+        margin-top: 40px;
+    }
+    .page__tree .branch__left ul::before, .page__tree .branch__right ul::before {
+        top: calc(var(--spacing) + 160px + -25vw / 2);
+        height: calc(100% - 170px);
+    }
+    .page__text p.title {
+        font-size: 20px;
+    }
+    .page__text p.subtitle {
+        font-size: 14px;
+    }
+    .history__year {
+        font-size: 16px !important;
+    }
+    .history__year__title {
+        font-size: 14px !important;
+    }
+    .history__year__description {
+        font-size: 10px !important;
+        width: 90%;
     }
 }
 .anim-top-fade-out {
