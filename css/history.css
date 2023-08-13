@@ -256,7 +256,7 @@
         width: 65%;
     }
 }
-@media(max-width: 960px) {
+@media(max-width: 1060px) {
     .history .indicators {
         display: none;
     }
@@ -335,6 +335,10 @@
     .page__tree .branch__left ul::before, .page__tree .branch__right ul::before {
         top: calc(var(--spacing) + 160px + -7.5vw / 2);
         height: calc(100% - 220px);
+    }
+
+    .history__page {
+        padding-left: 20px !important;
     }
 }
 @media (max-width: 450px) {
